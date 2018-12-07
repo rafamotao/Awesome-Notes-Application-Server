@@ -1,0 +1,40 @@
+
+<div *ngIf="appUser">
+    <h2><span jhiTranslate="myServerApp.appUser.detail.title">App User</span> {{appUser.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="myServerApp.appUser.username">Username</span></dt>
+        <dd>
+            <span>{{appUser.username}}</span>
+        </dd>
+        <dt><span jhiTranslate="myServerApp.appUser.pass">Pass</span></dt>
+        <dd>
+            <span>{{appUser.pass}}</span>
+        </dd>
+        <dt><span jhiTranslate="myServerApp.appUser.imageUrl">Image Url</span></dt>
+        <dd>
+            <span>{{appUser.imageUrl}}</span>
+        </dd>
+        <dt><span jhiTranslate="myServerApp.appUser.app">App</span></dt>
+        <dd>
+            <span *ngFor="let app of appUser.apps; let last = last">
+                <a [routerLink]="['/app-my-suffix', app?.id ]">{{app.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'app-user-my-suffix/'+ appUser.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

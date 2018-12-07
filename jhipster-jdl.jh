@@ -1,0 +1,32 @@
+entity AppUser {
+	username String required minlength(1) maxlength(50), 
+    pass String required,
+    imageUrl String maxlength(256)
+}
+
+entity App {
+	name String required maxlength(50)
+}
+
+entity Note {
+	title String required,
+    description String required,
+    imageUrl String maxlength(256)
+}
+
+// Relations ##############
+
+relationship ManyToMany {
+	AppUser{app} to App{appUser}
+}
+
+relationship OneToMany {
+	AppUser{note} to Note{appUser}
+}
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with mySuffix

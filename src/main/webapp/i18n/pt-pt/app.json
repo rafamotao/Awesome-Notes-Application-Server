@@ -1,0 +1,22 @@
+{
+    "myServerApp": {
+        "app" : {
+            "home": {
+                "title": "Apps",
+                "createLabel": "Criar um(a) novo(a) App",
+                "createOrEditLabel": "Criar ou editar um(a) App"
+            },
+            "created": "A new App is created with identifier {{ param }}",
+            "updated": "A App is updated with identifier {{ param }}",
+            "deleted": "A App is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) App {{ id }}?"
+            },
+            "detail": {
+                "title": "App"
+            },
+            "name": "Name",
+            "appUser": "App User"
+        }
+    }
+}

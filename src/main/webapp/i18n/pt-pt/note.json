@@ -1,0 +1,24 @@
+{
+    "myServerApp": {
+        "note" : {
+            "home": {
+                "title": "Notes",
+                "createLabel": "Criar um(a) novo(a) Note",
+                "createOrEditLabel": "Criar ou editar um(a) Note"
+            },
+            "created": "A new Note is created with identifier {{ param }}",
+            "updated": "A Note is updated with identifier {{ param }}",
+            "deleted": "A Note is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) Note {{ id }}?"
+            },
+            "detail": {
+                "title": "Note"
+            },
+            "title": "Title",
+            "description": "Description",
+            "imageUrl": "Image Url",
+            "appUser": "App User"
+        }
+    }
+}

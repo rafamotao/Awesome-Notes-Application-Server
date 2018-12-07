@@ -1,0 +1,25 @@
+{
+    "myServerApp": {
+        "appUser" : {
+            "home": {
+                "title": "App Users",
+                "createLabel": "Criar um(a) novo(a) App User",
+                "createOrEditLabel": "Criar ou editar um(a) App User"
+            },
+            "created": "A new App User is created with identifier {{ param }}",
+            "updated": "A App User is updated with identifier {{ param }}",
+            "deleted": "A App User is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) App User {{ id }}?"
+            },
+            "detail": {
+                "title": "App User"
+            },
+            "username": "Username",
+            "pass": "Pass",
+            "imageUrl": "Image Url",
+            "note": "Note",
+            "app": "App"
+        }
+    }
+}

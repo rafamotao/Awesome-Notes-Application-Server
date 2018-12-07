@@ -1,0 +1,40 @@
+
+<div *ngIf="note">
+    <h2><span jhiTranslate="myServerApp.note.detail.title">Note</span> {{note.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="myServerApp.note.title">Title</span></dt>
+        <dd>
+            <span>{{note.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="myServerApp.note.description">Description</span></dt>
+        <dd>
+            <span>{{note.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="myServerApp.note.imageUrl">Image Url</span></dt>
+        <dd>
+            <span>{{note.imageUrl}}</span>
+        </dd>
+        <dt><span jhiTranslate="myServerApp.note.appUser">App User</span></dt>
+        <dd>
+            <div *ngIf="note.appUserId">
+                <a [routerLink]="['/app-user-my-suffix', note.appUserId]">{{note.appUserId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'note-my-suffix/'+ note.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
